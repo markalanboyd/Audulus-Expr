@@ -22,7 +22,7 @@ External nodes:
 
 // Commented
 
-// Execute when T goes high
+// If T is high
 T
     // If rising edge
     ? T > Z1T
