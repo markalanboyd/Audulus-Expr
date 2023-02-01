@@ -165,7 +165,7 @@ RandMode
                         : Count > floor(Begin)
                             ? Count - Increment
                             : floor(End)
-                    : Directionthan End.
+                    : Direction
                         ? Count < floor(End)
                             ? Count + Increment
                             : floor(Begin)
