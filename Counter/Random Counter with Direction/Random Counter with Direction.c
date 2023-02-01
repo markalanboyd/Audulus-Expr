@@ -3,7 +3,7 @@ Random Counter with Direction
 by Mark Boyd
 v1.0 2023.02.01
 
-A fully-featured counter written for an Expr node. The counter counts from Begin to End, regardless if Begin is a higher value than End. Changing the Begin and End values does not affect the current count. Sync instantly resets the counter to the begin value. Random mode chooses a random number between the Begin and End values. Direction makes the counter count forward from Begin to End (1), backward (0), or a biased random walk (between 0 and 1), where 0.5 = 50% chance to count forwards or backwards.
+A fully-featured counter written for an Expr node. The counter counts from Begin to End, regardless if Begin is a higher value than End. Changing the Begin and End values does not affect the current count. Sync instantly resets the counter to the Begin value. Random mode chooses a random number between the Begin and End values. Direction makes the counter count forward from Begin to End (1), backward (0), or a biased random walk (between 0 and 1), where 0.5 = 50% chance to count forwards or backwards.
 
 Inputs
 
