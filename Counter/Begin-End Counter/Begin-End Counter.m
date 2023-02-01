@@ -27,19 +27,19 @@ External nodes:
 
 // Commented
 
-// If sync is high,
+// If sync is high
 Sync 
-    // return to begin.
+    // Return to Begin
     ? floor(Begin)
-    // Rising edge detector
+    // If rising edge
     : Gate > Z1Gate 
-        // Check if the count is less than End
+        // If Count is less than End
         ? Count < floor(End)
-            // If so, add the increment to the count
+            // Add the increment to the count
             ? Count + Increment
-            // Otherwise, return to Begin
+            // Else return to Begin
             : floor(Begin)
-    // If not during the 1 sample after Gate's rising edge is detected
+    // If not rising edge
         // Return Count
         : Count
 
