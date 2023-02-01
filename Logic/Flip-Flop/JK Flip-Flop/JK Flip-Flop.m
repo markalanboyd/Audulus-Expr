@@ -21,34 +21,14 @@ External nodes:
 
 // Commented
 
-// If sync is high,
-Sync 
-    // return to begin.
-    ? floor(Begin)
-    // Rising edge detector
-    : Gate > PrevGate 
-        // Check if the count is less than End
-        ? Count < floor(End)
-            // If so, add the increment to the count
-            ? Count + Increment
-            // Otherwise, return to Begin
-            : floor(Begin)
-    // If not during the 1 sample after Gate's rising edge is detected
-        // Return Count
-        : Count
+
 
 
 // Uncommented
 
-Sync 
-    ? floor(Begin)
-    : Gate > PrevGate 
-        ? Count < floor(End)
-            ? Count + Increment
-            : floor(Begin)
-        : Count
+
 
 
 // Minified
 
-Sync?floor(Begin):Gate>PrevGate?Count<floor(End)?Count+Increment:floor(Begin):Count
+
