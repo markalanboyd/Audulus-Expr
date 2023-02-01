@@ -40,7 +40,6 @@ Gate > Z1Gate
         : 0
 
 
-
 // Minified
 
 Gate>Z1Gate?1:Gate<Z1Gate?1:0
