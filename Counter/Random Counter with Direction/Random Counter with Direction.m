@@ -69,7 +69,7 @@ RandMode
             // return to begin.
 			? floor(Begin)
             // Rising edge detector
-			: Gate > PrevGate 
+			: (Gate > 0) * (PrevGate <= 0)
                 // Check if the Direction control is somewhere between 0 and 1.
                 ? (Direction > 0) * (Direction < 1)
                     // If Noise is less than Direction,
@@ -110,7 +110,7 @@ RandMode
             // return to Begin.
 			? floor(Begin) 
             // Rising edge detector
-			: Gate > PrevGate 
+			: (Gate > 0) * (PrevGate <= 0)
                 // Check if the Direction control is somewhere between 0 and 1.
                 ? (Direction > 0) * (Direction < 1)
                     // If Noise is less than Direction,
@@ -156,7 +156,7 @@ RandMode
 	: Begin <= End
 		? Sync 
 			? floor(Begin)
-			: Gate > PrevGate 
+			: (Gate > 0) * (PrevGate <= 0)
                 ? (Direction > 0) * (Direction < 1)
                     ? Noise < Direction
                         ? Count < floor(End)
@@ -175,7 +175,7 @@ RandMode
 				: Count
 		: Sync 
 			? floor(Begin) 
-			: Gate > PrevGate 
+			: (Gate > 0) * (PrevGate <= 0)
                 ? (Direction > 0) * (Direction < 1)
                     ? Noise < Direction
                         ? Count > floor(End)
@@ -196,4 +196,4 @@ RandMode
 
 // Minified
 
-RandMode?Gate>PrevGate?floor(Noise*(floor(End)-floor(Begin))+floor(Begin)):Count:Begin<=End?Sync?floor(Begin):Gate>PrevGate?(Direction>0)*(Direction<1)?Noise<Direction?Count<floor(End)?Count+Increment:floor(Begin):Count>floor(Begin)?Count-Increment:floor(End):DirectionthanEnd.?Count<floor(End)?Count+Increment:floor(Begin):Count>floor(Begin)?Count-Increment:floor(End):Count:Sync?floor(Begin):Gate>PrevGate?(Direction>0)*(Direction<1)?Noise<Direction?Count>floor(End)?Count-Increment:floor(Begin):Count<floor(Begin)?Count+Increment:floor(End):Direction?Count>floor(End)?Count-Increment:floor(Begin):Count<floor(Begin)?Count+Increment:floor(End):Count
+RandMode?(Gate>0)*(PrevGate<=0)?floor(Noise*(floor(End)-floor(Begin))+floor(Begin)):Count:Begin<=End?Sync?floor(Begin):(Gate>0)*(PrevGate<=0)?(Direction>0)*(Direction<1)?Noise<Direction?Count<floor(End)?Count+Increment:floor(Begin):Count>floor(Begin)?Count-Increment:floor(End):DirectionthanEnd.?Count<floor(End)?Count+Increment:floor(Begin):Count>floor(Begin)?Count-Increment:floor(End):Count:Sync?floor(Begin):Gate>PrevGate?(Direction>0)*(Direction<1)?Noise<Direction?Count>floor(End)?Count-Increment:floor(Begin):Count<floor(Begin)?Count+Increment:floor(End):Direction?Count>floor(End)?Count-Increment:floor(Begin):Count<floor(Begin)?Count+Increment:floor(End):Count

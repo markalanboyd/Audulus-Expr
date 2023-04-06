@@ -23,7 +23,7 @@ External nodes:
 3 & 4. Begin/End: Expr nodes - The Begin and End control values need to be multiplied by a single MaxCount value + 0.999 to ensure that the controls swing through all numbers equally.
 
 */
-
+Gate > 0 * PrevGate <= 0
 
 // Commented
 
